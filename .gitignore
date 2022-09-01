@@ -6,8 +6,6 @@
 /out-tsc
 /bazel-out
 
-src/environments
-
 prisma
 
 .env
