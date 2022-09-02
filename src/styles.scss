@@ -1,4 +1,116 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$orange: (
+  50: #ffefe0,
+  100: #ffd7b3,
+  200: #ffbd80,
+  300: #ffa34d,
+  400: #ff8f26,
+  500: #ff7b00,
+  600: #ff7300,
+  700: #ff6800,
+  800: #ff5e00,
+  900: #ff4b00,
+  A100: #ffffff,
+  A200: #fff5f2,
+  A400: #ffcebf,
+  A700: #ffbaa6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$blue: (
+  50: #e0f0ff,
+  100: #b3daff,
+  200: #80c2ff,
+  300: #4da9ff,
+  400: #2696ff,
+  500: #0084ff,
+  600: #007cff,
+  700: #0071ff,
+  800: #0067ff,
+  900: #0054ff,
+  A100: #ffffff,
+  A200: #f2f6ff,
+  A400: #bfd0ff,
+  A700: #a6beff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$dnd-cv-primary: mat.define-palette($orange);
+$dnd-cv-accent: mat.define-palette($blue);
+
+// The warn palette is optional (defaults to red).
+$dnd-cv-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$dnd-cv-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $dnd-cv-primary,
+      accent: $dnd-cv-accent,
+      warn: $dnd-cv-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($dnd-cv-theme);
+
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+html,
+body {
+  height: 100%;
+}
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+}
