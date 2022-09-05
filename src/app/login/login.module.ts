@@ -6,7 +6,8 @@ import { LoginComponent } from './login.component';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxsModule } from '@ngxs/store';
 import { environment } from 'src/environments/environment';
-import { LoginState } from './store/states/login.state';
+import { NgxsFormPluginModule } from '@ngxs/form-plugin';
+import { LoginPageState } from './store/states/login-page.state';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -14,7 +15,8 @@ import { LoginState } from './store/states/login.state';
     CommonModule,
     LoginRoutingModule,
     MatButtonModule,
-    NgxsModule.forFeature([LoginState]),
+    NgxsModule.forFeature([LoginPageState]),
+    NgxsFormPluginModule,
   ],
 })
 export class LoginModule {}
