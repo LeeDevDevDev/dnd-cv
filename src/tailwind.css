@@ -6,5 +6,13 @@
 /* focused border: 700 */
 
 .btn {
-  @apply text-white bg-amber-700 hover:bg-amber-600 focus:ring-1 focus:ring-stone-700 font-medium rounded-md text-sm px-6 py-2 focus:outline-none;
+  @apply focus:ring-1 focus:ring-stone-700 font-medium rounded-md text-sm px-6 py-2 focus:outline-none inline-flex max-w-xl;
+}
+
+.btn-primary {
+  @apply text-white bg-amber-700 hover:bg-amber-600;
+}
+
+.btn-alt {
+  @apply hover:text-amber-700 ring-1 ring-stone-300;
 }
