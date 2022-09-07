@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* focused border: 700 */
+
+.btn {
+  @apply text-white bg-amber-700 hover:bg-amber-600 focus:ring-1 focus:ring-stone-700 font-medium rounded-md text-sm px-6 py-2 focus:outline-none;
+}
