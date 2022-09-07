@@ -16,3 +16,11 @@
 .btn-alt {
   @apply hover:text-amber-700 ring-1 ring-stone-300;
 }
+
+/* .border {
+  @apply;
+} */
+
+.screen {
+  @apply min-h-screen flex flex-col;
+}
